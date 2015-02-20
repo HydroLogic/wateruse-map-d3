@@ -1,0 +1,61 @@
+#header {
+    font-family: Georgia,"Times New Roman",Times,serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+#section {
+    font-family: Georgia,"Times New Roman",Times,serif;
+    float: left;
+    padding: 5px; 
+}
+#interactive-update {
+    width: 350px;
+    float: right;
+    background-color: #D6E0EB;
+    text-align: center;
+    padding: 2px;
+    border-radius: 5px;
+}
+#footer {
+    background-color: black;
+    color: white;
+    clear: both;
+    text-align: center;
+    padding: 5px; 
+}
+
+/*p {
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-size: 18px;
+}
+*/
+/* svg styles */
+svg {
+	fill: none;
+	stroke: black;
+}
+
+.tooltip {
+	position: absolute;
+	background: black;
+	padding: 4px;
+	font: 12px sans-serif;
+	color: white;
+	opacity: 0.9;
+	border: 0px;
+	border-radius: 4px;
+	visibility: hidden;
+}
+
+/* other styles */
+#statename {
+    font-family: Georgia,"Times New Roman",Times,serif;
+	color: black;
+}
+
+#statevalue {
+    font-family: Georgia,"Times New Roman",Times,serif;
+	color: blue;
+}
