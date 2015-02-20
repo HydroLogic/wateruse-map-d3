@@ -23,8 +23,8 @@ var tooltip = d3.select("body")
 
 // create a quantize scale (function) to sort data values into buckets of color
 var color = d3.scale.quantize()
-	// .range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,44)"]);
 	.range(["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)", "rgb(8,48,107)"]);
+
 // function to calculate a color based on the ag productivity from data/us-ag-productivity-2004.csv file
 function calculate_color(d) {
 

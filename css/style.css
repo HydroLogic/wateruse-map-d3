@@ -1,23 +1,26 @@
 #header {
-    font-family: Georgia,"Times New Roman",Times,serif;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     background-color: black;
     color: white;
     text-align: center;
     padding: 5px;
 }
+
 #section {
     font-family: Georgia,"Times New Roman",Times,serif;
     float: left;
     padding: 5px; 
 }
+
 #interactive-update {
-    width: 350px;
-    float: right;
-    background-color: #D6E0EB;
+    width: 250px;
+    float: left;
+    background-color: LightGray;
     text-align: center;
     padding: 2px;
     border-radius: 5px;
 }
+
 #footer {
     background-color: black;
     color: white;
@@ -26,12 +29,6 @@
     padding: 5px; 
 }
 
-/*p {
-    font-family: Georgia,"Times New Roman",Times,serif;
-    font-size: 18px;
-}
-*/
-/* svg styles */
 svg {
 	fill: none;
 	stroke: black;
@@ -49,13 +46,12 @@ svg {
 	visibility: hidden;
 }
 
-/* other styles */
 #statename {
-    font-family: Georgia,"Times New Roman",Times,serif;
-	color: black;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+    margin: 4px;
 }
 
 #statevalue {
-    font-family: Georgia,"Times New Roman",Times,serif;
-	color: blue;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+    margin: 4px;
 }
