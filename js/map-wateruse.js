@@ -1,18 +1,18 @@
 // set width and height of svg element
-var width = 1200;
-var height = 600;
+var width = 1140;
+var height = 500;
 
 // create projection
 var projection = d3.geo.albersUsa()
 	.translate([width / 2, height / 2])
-	.scale([1300]);
+	.scale([1100]);
 
 // create path generator; converts geojson to svg path's ("M 100 100 L 300 100 L 200 300 z")
 var path = d3.geo.path()
 	.projection(projection);
 
 // create an svg element to the body of the html
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#map").append("svg")
 	.attr("width", width)
 	.attr("height", height);
 
@@ -107,7 +107,7 @@ d3.csv("data/2010-us-total-wateruse.csv", function(wateruse_data) {
 		  				.text(d.properties.name + " = " + d.properties.value + " mgd");
 		  	})
 		  	.on("mousemove", function() {
-		  		return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");
-		  	});
+		  		return tooltip.style("top", (event.pageY + 10) + "px").style("left", (event.pageX + 10) + "px");
+		  	})
 	});
 });

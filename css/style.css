@@ -47,11 +47,17 @@ svg {
 }
 
 #statename {
-    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
-    margin: 4px;
+
 }
 
 #statevalue {
-    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
-    margin: 4px;
+
+}
+
+#interactive-span {
+
+}
+
+.title-logo {
+    margin-top: 20px;
 }

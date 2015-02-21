@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Water Use Map</title>
-	<script src="js/d3.js"></script>
-	<link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <title>Water Use Map</title>
+    <script src="js/d3.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div id="header">
-		<h1>Interactive Water Use Map</h1>		
-	</div>
-	<div id="section">
-		<h2>Description</h2>
-		<p>
-		An interactive map of estimated water use by state during the year 2010. The data is provided by the <a href="http://www.usgs.gov/" target="_blank">United States Geological Survey (USGS)</a> and can be found at <a href="http://water.usgs.gov/watuse/data/2010/index.html" target="_blank">USGS Water Use in the United States</a>. The report, <a href="http://water.usgs.gov/watuse/data/2010/index.html" target="_blank">Estimated Use of Water in the United States in 2010</a>, describes the purpose and scope along with the sources of data and methods of analysis. The choropleth map shows total water withdrawls by state in units of million gallons per day (mgd). The map was built using <a href="http://d3js.org/" target="_blank">D3.js</a>, a javascript library used for data visualization.
-		</p>
-		<h2>Map Controls</h2>
-		<ul>
-			<li>Hovering - highlights a state and updates the text display.</li>
-			<li>Clicking - shows tooltip of state name and corresponding water use in millions of gallons per day.</li>			
-		</ul>
-	</div>
-	<div id="interactive-update">
-		<h2 id="statename">name</h2>
-		<h2 id="statevalue">value</h2>
-	</div>
-	<script src="js/map-wateruse.js"></script>
-
-	<div id="footer">
-		Built by Jeremiah Lant
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Interactive Water Use Map</h1>
+                <h3>By <a href="https://github.com/jlant-usgs/" target="_blank">Jeremiah Lant</a> using <a href="http://d3js.org/" target="_blank">D3.js</a></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 id="statename">Kentucky</h2>
+                <h2 id="statevalue">4330 mgd</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="map">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Description</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                An interactive map of estimated water use by state during the year 2010. The data is provided by the <a href="http://www.usgs.gov/" target="_blank">United States Geological Survey (USGS)</a> and can be found at <a href="http://water.usgs.gov/watuse/data/2010/index.html" target="_blank">USGS Water Use in the United States</a>. The report, <a href="http://pubs.usgs.gov/circ/1405/" target="_blank">Estimated Use of Water in the United States in 2010</a>, describes the purpose and scope along with the sources of data and methods of analysis. The choropleth map shows total water withdrawls by state in units of million gallons per day (mgd). The map was built using <a href="http://d3js.org/" target="_blank">D3.js</a>, a javascript library used for data visualization.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Examples and Inspirations</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <a href="http://bl.ocks.org/mbostock/4060606" target="_blank">
+                    <img src="images/choropleth-example.png" alt="Choropleth Example">
+                </a>
+                <h3>Choropleth by D3.js creator <a href="http://bost.ocks.org/mike/" target="_blank">Mike Bostock</a></h3>
+                <p><a href="http://bl.ocks.org/mbostock/4060606">Link</a></p>
+            </div>
+            <div class="col-md-6">
+                <a href="http://pubs.usgs.gov/circ/1405/" target="_blank">
+                    <img src="images/usgs-circular.png" alt="Water Use Report">
+                </a>
+                <h3>Esimated Water Use Data and Report by <a href="http://www.usgs.gov/" target="_blank">USGS</a></h3>
+                <p><a href="http://pubs.usgs.gov/circ/1405/">Link</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="js/map-wateruse.js"></script>
 </body>
 </html>
