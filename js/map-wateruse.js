@@ -25,6 +25,20 @@ var tooltip = d3.select("body")
 var color = d3.scale.quantize()
 	.range(["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)", "rgb(8,48,107)"]);
 
+// var color = d3.scale.quantize()
+// 	.range(colorbrewer.Blues[9])
+
+// make a legend
+// var legend = svg.selectAll("g.legend_entry")
+// 	.data(color.range())
+// 	.enter()
+// 	.append("g")
+// 	.attr("class", "legend_entry");
+
+var legend = d3.select("#legend")
+	.append("ul")
+	.attr("class", "list-inline");
+
 // function to calculate a color based on the ag productivity from data/us-ag-productivity-2004.csv file
 function calculate_color(d) {
 
@@ -109,5 +123,18 @@ d3.csv("data/2010-us-total-wateruse.csv", function(wateruse_data) {
 		  	.on("mousemove", function() {
 		  		return tooltip.style("top", (event.pageY + 10) + "px").style("left", (event.pageX + 10) + "px");
 		  	})
+		
+		var keys = legend.selectAll("li.key")
+			.data(color.range())
+
+		keys.enter().append("li")
+			.attr("class", "key")
+			.style("border-top-color", String)
+			.text(function(d) {
+				var r = color.invertExtent(d);
+				console.log(r)
+				var format = d3.format("0.0f");
+				return format(+r[0]) + " - " + format(+r[1]);
+			});
 	});
 });
