@@ -32,6 +32,16 @@ li.key {
     padding-right: 0;
 }
 
+.bar {
+    fill: steelblue;
+    fill-opactiy: 0.9;
+    stroke: none;
+}
+
+.bar:hover {
+    fill: orange;
+}
+
 .axis path,
 .axis line {
     fill: none;
@@ -41,21 +51,15 @@ li.key {
 
 .axis text {
     font-family: sans-serif;
-    font-size: 11px;
-}
-
-.bar {
-    fill: steelblue;
-    fill-opactiy: 0.9;
-}
-
-.bar:hover {
-    fill: orange;
+    font-size: 12px;
+    fill: black;
+    stroke: none;
 }
 
 .x.axis path {
     display: none;
 }
+
 
 .tooltip-bar {
     position: absolute;
@@ -67,4 +71,8 @@ li.key {
     border: 0px;
     border-radius: 4px;
     visibility: hidden;
+}
+
+.checkbox-sort {
+    font-size: 16px;
 }

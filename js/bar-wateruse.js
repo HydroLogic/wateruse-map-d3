@@ -3,7 +3,7 @@ var margin = {
 	top: 40,
 	right: 20,
 	bottom: 85,
-	left: 50
+	left: 80
 }
 
 var width_bar = 1200 - margin.left - margin.right
@@ -57,6 +57,13 @@ d3.csv("data/2010-us-total-wateruse.csv", function(error, data) {
 	svg_bar_chart.append("g")
 		.attr("class", "y axis")
 		.call(y_axis)
+		.append("text")
+		.attr("transform", "rotate(-90)")
+		.attr("y", -80)
+		.attr("dy", "0.71em")
+		.attr("dx", "-5em")
+		.style("text-anchor", "end")
+		.text("Water Withdrawls, in million gallons per day")
 
 	svg_bar_chart.selectAll(".bar")
 		.data(data)
