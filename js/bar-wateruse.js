@@ -9,18 +9,18 @@ var margin = {
 var width_bar = 1200 - margin.left - margin.right
 var height_bar = 500 - margin.top - margin.bottom
 
-var x = d3.scale.ordinal()
+var x_scale = d3.scale.ordinal()
 	.rangeRoundBands([0, width_bar], 0.1);
 
-var y = d3.scale.linear()
+var y_scale = d3.scale.linear()
 	.range([height_bar, 0]);
 
 var x_axis = d3.svg.axis()
-	.scale(x)
+	.scale(x_scale)
 	.orient("bottom");
 
 var y_axis = d3.svg.axis()
-	.scale(y)
+	.scale(y_scale)
 	.orient("left")
 
 var tooltip_bar = d3.select("body")
@@ -36,11 +36,11 @@ var svg_bar_chart = d3.select("#bar-chart")
 
 d3.csv("data/2010-us-total-wateruse.csv", function(error, data) {
 
-	x.domain(data.map(function(d) {
+	x_scale.domain(data.map(function(d) {
 		return d.state;
 	}));
 
-	y.domain([0, d3.max(data, function(d) {
+	y_scale.domain([0, d3.max(data, function(d) {
 		return parseFloat(d.value);
 	})]);
 
@@ -61,7 +61,7 @@ d3.csv("data/2010-us-total-wateruse.csv", function(error, data) {
 		.attr("transform", "rotate(-90)")
 		.attr("y", -80)
 		.attr("dy", "0.71em")
-		.attr("dx", "-5em")
+		.attr("dx", "-4em")
 		.style("text-anchor", "end")
 		.text("Water Withdrawls, in million gallons per day")
 
@@ -71,14 +71,14 @@ d3.csv("data/2010-us-total-wateruse.csv", function(error, data) {
 		.append("rect")
 		.attr("class", "bar")
 		.attr("x", function(d) {
-			return x(d.state);
+			return x_scale(d.state);
 		})
-		.attr("width", x.rangeBand())
+		.attr("width", x_scale.rangeBand())
 		.attr("y", function(d) {
-			return y(d.value);
+			return y_scale(d.value);
 		})
 		.attr("height", function(d) {
-			return height_bar - y(d.value);
+			return height_bar - y_scale(d.value);
 		})
 		.on("mouseover", function(d) {
 			return tooltip_bar.style("visibility", "visible")
@@ -92,8 +92,8 @@ d3.csv("data/2010-us-total-wateruse.csv", function(error, data) {
 	d3.select("input").on("change", change);
 
 	function change() {
-		// if the value of the input checkbox is checked, then x.domain is sorted by highest to lowest values, otherwise it is sorted alphabetically as original data
-		var x0 = x.domain(data.sort(this.checked
+		// if the value of the input checkbox is checked, then x_scale.domain is sorted by highest to lowest values, otherwise it is sorted alphabetically as original data
+		var x_scale_0 = x_scale.domain(data.sort(this.checked
 			? function(a, b) { return b.value - a.value; }
 			: function(a, b) { return d3.ascending(a.state, b.state); })
 			.map(function(d) {return d.state;} ))
@@ -104,7 +104,7 @@ d3.csv("data/2010-us-total-wateruse.csv", function(error, data) {
 
 		transition.selectAll(".bar")
 			.delay(delay)
-			.attr("x", function(d) { return x0(d.state); });
+			.attr("x", function(d) { return x_scale_0(d.state); });
 
 		transition.select(".x.axis")
 			.attr("transform", "translate(0," + height_bar + ")")
