@@ -12,7 +12,4 @@ describes the purpose and scope along with the sources of data and methods of an
 The choropleth map shows total water withdrawls by state in units of million gallons per day (mgd). 
 The map was built using [D3.js](http://d3js.org/) a javascript library used for data visualization.
 
-***
-Map
----
-Here is the [interactive water use map](http://jlant-usgs.github.io/wateruse-map-d3/).
+Website - http://jlant-usgs.github.io/wateruse-map-d3/
